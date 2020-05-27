@@ -25,14 +25,12 @@ class ThemeModel extends ChangeNotifier {
       final fileContents = await file.readAsString();
       final json = jsonDecode(fileContents);
       useSystemTheme = json['useSystemTheme'];
-      theme =  _themeFromString(json['theme']);
+      theme = (useSystemTheme) ? (theme)  : _themeFromString(json['theme']);
     } catch (e) {
       print(e);
     }
     _useSystemTheme = useSystemTheme;
-    if (!_useSystemTheme) {
-      _theme = theme;
-    }
+    _theme = theme;
     notifyListeners();
   }
 
