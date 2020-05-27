@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:rems/Storage/Storage.dart';
+import 'package:rems/storage/storage.dart';
 import 'package:rems/data/task.dart';
 
 class ReminderModel extends ChangeNotifier {

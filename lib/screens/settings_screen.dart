@@ -13,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
             Text('Use System Theme', style: TextStyle(fontSize: 20),),
             Align(alignment: Alignment.centerRight,child: Switch(value: Provider.of<ThemeModel>(context, listen: true).useSystemTheme, onChanged: (value) {Provider.of<ThemeModel>(context, listen: false).toggleSystemTheme();})),
           ]),
-          Row(children: [
+          Row(children:  (Provider.of<ThemeModel>(context, listen: false).useSystemTheme) ? [] :  [
             Text('Theme', style: TextStyle(fontSize: 20),),
             Align(
               alignment: Alignment.centerRight,
