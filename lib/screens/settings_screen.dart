@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:rems/models/general_preferences_model.dart';
 import 'package:rems/models/theme_model.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -35,6 +36,10 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
           ]),
+          Row(children: <Widget>[
+            Text('Show Menu Titles', style: TextStyle(fontSize: 20),),
+            Switch(value: Provider.of<GeneralPreferencesModel>(context, listen: true).showMenuTitles, onChanged: (value) {Provider.of<GeneralPreferencesModel>(context, listen: false).setMenuTitles(value);}),
+          ],)
         ],
       ),
     );
